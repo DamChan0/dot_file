@@ -1,0 +1,9 @@
+2024-09-10 15:48:03.355 [info] Started initializing default profile extensions in extensions installation folder. file:///home/B240801/.vscode/extensions
+2024-09-10 15:48:03.493 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/B240801/.vscode/extensions
+2024-09-10 15:48:03.589 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/B240801/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/B240801/.vscode/extensions/extensions.json.vsctmp'
+    at o.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:19406)
+    at u (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:19517)
+    at $.hb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:36674)
+    at $.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:29001)
+    at async c.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:14931)
+    at async W.ub (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:105:120356)

@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/etc/modprobe.d'
+let g:netrw_dirhist_5='/etc'
+let g:netrw_dirhist_4='/etc/modules-load.d'
+let g:netrw_dirhist_3='/home/B240801/trash/build-autolinux/build/tcc7500-main/conf'
+let g:netrw_dirhist_2='/etc/ssh/ssh_config.d'
+let g:netrw_dirhist_1='/usr/lib/modules/5.4.0-164-generic'
