@@ -31,6 +31,7 @@ chezmoi update
 
 | 분류 | 프로그램 | 설치 방법 |
 |------|----------|-----------|
+| 폰트 | [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts) | GitHub release |
 | Shell | zsh | apt |
 | Shell 프레임워크 | [Oh My Zsh](https://ohmyz.sh/) | 공식 스크립트 |
 | Shell 테마 | [Powerlevel10k](https://github.com/romkatv/powerlevel10k) | git clone (omz custom theme) |
@@ -119,4 +120,4 @@ chezmoi add ~/.config/새파일    # chezmoi 관리 대상에 추가
 
 - **OS**: Ubuntu (apt 기반 배포판)
 - **기본 쉘**: zsh (설치 스크립트에서 `chsh`로 자동 변경)
-- **Nerd Font** 필요: Powerlevel10k 테마가 아이콘을 사용하므로 터미널에 [Nerd Font](https://www.nerdfonts.com/)를 설정해야 합니다
+- **Nerd Font**: MesloLGS Nerd Font가 자동 설치됩니다. 터미널 설정에서 폰트를 `MesloLGS Nerd Font`로 변경하면 됩니다

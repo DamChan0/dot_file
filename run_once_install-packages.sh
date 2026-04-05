@@ -25,7 +25,25 @@ sudo apt-get install -y -qq \
     unzip
 
 # ------------------------------
-# 2. Oh My Zsh
+# 2. Nerd Fonts (MesloLGS — recommended by Powerlevel10k)
+# ------------------------------
+FONT_DIR="$HOME/.local/share/fonts"
+if [ ! -f "$FONT_DIR/MesloLGSNerdFont-Regular.ttf" ]; then
+    echo ">>> Installing MesloLGS Nerd Font..."
+    mkdir -p "$FONT_DIR"
+    curl -fsSL -o "$FONT_DIR/MesloLGSNerdFont-Regular.ttf"    "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Meslo/S/Regular/MesloLGSNerdFont-Regular.ttf"
+    curl -fsSL -o "$FONT_DIR/MesloLGSNerdFont-Bold.ttf"       "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Meslo/S/Bold/MesloLGSNerdFont-Bold.ttf"
+    curl -fsSL -o "$FONT_DIR/MesloLGSNerdFont-Italic.ttf"     "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Meslo/S/Italic/MesloLGSNerdFont-Italic.ttf"
+    curl -fsSL -o "$FONT_DIR/MesloLGSNerdFont-BoldItalic.ttf" "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Meslo/S/BoldItalic/MesloLGSNerdFont-BoldItalic.ttf"
+    curl -fsSL -o "$FONT_DIR/MesloLGSDZNerdFont-Regular.ttf"  "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Meslo/S-DZ/Regular/MesloLGSDZNerdFont-Regular.ttf"
+    curl -fsSL -o "$FONT_DIR/SymbolsNerdFont-Regular.ttf"     "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFont-Regular.ttf"
+    curl -fsSL -o "$FONT_DIR/SymbolsNerdFontMono-Regular.ttf" "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf"
+    fc-cache -f "$FONT_DIR"
+    echo "    MesloLGS Nerd Font installed. Set it as your terminal font."
+fi
+
+# ------------------------------
+# 3. Oh My Zsh
 # ------------------------------
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo ">>> Installing Oh My Zsh..."
@@ -33,7 +51,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 # ------------------------------
-# 3. Powerlevel10k (oh-my-zsh custom theme)
+# 4. Powerlevel10k (oh-my-zsh custom theme)
 # ------------------------------
 P10K_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 if [ ! -d "$P10K_DIR" ]; then
@@ -42,7 +60,7 @@ if [ ! -d "$P10K_DIR" ]; then
 fi
 
 # ------------------------------
-# 4. Zsh plugins (oh-my-zsh custom)
+# 5. Zsh plugins (oh-my-zsh custom)
 # ------------------------------
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
@@ -57,7 +75,7 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
 fi
 
 # ------------------------------
-# 5. Neovim (latest stable)
+# 6. Neovim (latest stable)
 # ------------------------------
 if ! command -v nvim &>/dev/null; then
     echo ">>> Installing Neovim..."
@@ -69,7 +87,7 @@ if ! command -v nvim &>/dev/null; then
 fi
 
 # ------------------------------
-# 6. Rust (via rustup)
+# 7. Rust (via rustup)
 # ------------------------------
 if ! command -v cargo &>/dev/null; then
     echo ">>> Installing Rust..."
@@ -78,7 +96,7 @@ if ! command -v cargo &>/dev/null; then
 fi
 
 # ------------------------------
-# 7. Zellij
+# 8. Zellij
 # ------------------------------
 if ! command -v zellij &>/dev/null; then
     echo ">>> Installing Zellij..."
@@ -86,7 +104,7 @@ if ! command -v zellij &>/dev/null; then
 fi
 
 # ------------------------------
-# 8. GitHub CLI
+# 9. GitHub CLI
 # ------------------------------
 if ! command -v gh &>/dev/null; then
     echo ">>> Installing GitHub CLI..."
@@ -97,7 +115,7 @@ if ! command -v gh &>/dev/null; then
 fi
 
 # ------------------------------
-# 9. NVM + Node.js
+# 10. NVM + Node.js
 # ------------------------------
 if [ ! -d "$HOME/.nvm" ]; then
     echo ">>> Installing NVM..."
@@ -113,7 +131,7 @@ if ! command -v node &>/dev/null; then
 fi
 
 # ------------------------------
-# 10. Set default shell to zsh
+# 11. Set default shell to zsh
 # ------------------------------
 if [ "$SHELL" != "$(which zsh)" ]; then
     echo ">>> Setting zsh as default shell..."
